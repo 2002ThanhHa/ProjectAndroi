@@ -36,7 +36,7 @@ const arr2=[
 ]
 
 
-export default function Home() {
+export default function Home({navigation}) {
   const[data1,setData1] = useState(arr1);
   const[data2,setData2] = useState(arr2);
   
@@ -210,8 +210,10 @@ export default function Home() {
         </View>
 
         <View style={{width: '20%', height:'100%', backgroundColor: 'white'}}>
+          <Pressable onPress={()=> navigation.navigate("DanhMuc")}>
             <Image source={require('../image/ButtonDanhMuc.png')} style={{width: '58%', height: 44, margin: 15, marginLeft: 15}}/>
             <Text style={{fontSize: 13, fontWeight: '500',margin: -15, marginLeft: 8,  }}>Danh mục</Text>
+            </Pressable>
         </View>
 
         <View style={{width: '20%', height:'100%', backgroundColor: 'white'}}>
