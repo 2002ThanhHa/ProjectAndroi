@@ -17,13 +17,14 @@ import FlashSale2 from './Screen/FlashSale2';
 import DiaChi from './Screen/Daichi';
 import DiaChiN from './Screen/DiajChiN';
 import DiaChiT from './Screen/DiaChiT';
+import CuaHang from './Screen/CuaHang';
 const stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <stack.Navigator >
-        {/* <stack.Screen options={{ headerShown: false }} name="Home" component={Home}></stack.Screen> 
+        <stack.Screen options={{ headerShown: false }} name="Home" component={Home}></stack.Screen> 
         <stack.Screen options={{ headerShown: false }} name="DanhMuc" component={DanhMuc}></stack.Screen>
         <stack.Screen options={{ headerShown: false }} name="SanPham" component={SanPham}></stack.Screen>
         <stack.Screen options={{ headerShown: false }} name="GioHang" component={GioHang}></stack.Screen>
@@ -33,11 +34,12 @@ export default function App() {
         <stack.Screen options={{ headerShown: false }} name="NhanHangGo" component={NhanHangGo}></stack.Screen>
         <stack.Screen options={{ headerShown: false }} name="KiemTraGia" component={KiemTraGia}></stack.Screen>
         <stack.Screen options={{ headerShown: false }} name="FlashSale" component={FlashSale}></stack.Screen>
-        <stack.Screen options={{ headerShown: false }} name="FlashSale2" component={FlashSale2}></stack.Screen> */}
+        <stack.Screen options={{ headerShown: false }} name="FlashSale2" component={FlashSale2}></stack.Screen>
       
          <stack.Screen options={{ headerShown: false }} name="DiaChi" component={DiaChi}></stack.Screen>
          <stack.Screen options={{ headerShown: false }} name="DiaChiT" component={DiaChiT}></stack.Screen>
          <stack.Screen options={{ headerShown: false }} name="DiaChiN" component={DiaChiN}></stack.Screen>
+         <stack.Screen options={{ headerShown: false }} name="CuaHang" component={CuaHang}></stack.Screen> 
       </stack.Navigator>
     </NavigationContainer>);
 }

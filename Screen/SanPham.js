@@ -8,18 +8,19 @@ import { Ionicons, AntDesign, FontAwesome, Fontisto, MaterialCommunityIcons } fr
 export default function SanPham({ navigation, route }) {
     const [item, setItem] = useState(
         route.params?.item || {
-            image: require('../image_Ha/Danh Mục/bánh bao/bánh bao kim sa.png'),
-            name: 'Thùng 30 mì Hảo Hảo tôm chua cay 75g',
-            price: '115,900đ', /*giachuagiam*/
-            price_up: '36,900d', /*giaban*/
-            thuong_hieu: 'Hảo Hảo',
-            xuat_xu: 'Việt Nam',
-            trong_luong: '75g x 30 gói',
-            thanh_phan: 'VẮT MÌ - Bột mì (bổ sung vi chất (kẽm, sắt)), dầu thực vật (dầu cọ, chất chống oxy hoá (BHA (320), BHT (321))), tinh bột, muối, chất ổn định (pentanatri triphosphat (451(i)), kali carbonat (501(i))), chất nhũ hoá (natri cacbonxymethyl cellulose (466)), chất điều chỉnh acid (natri carbonat (500(i))), bột nghệ, chất tạo màu tự nhiên (curcumin (100(i))).CÁC GÓI GIA VỊ - Dầu thực vật (dầu cọ, chất chống oxy hoá (BHA (320), BHT (321))), đường, muối, hành, các gia vị, chất điều vị (mononatri glutamat (621), dinatri 5 -inosinat (631), dinatri 5 -guanylat (627), disodium succinate), cà chua, me, maltodextrin, tôm 2,75 g/kg, hành lá sấy, chất tạo màu tổng hợp (caramen nhóm I (150a), paprika oleoresin (160c)), thịt heo, lá chanh, chất tạo ngọt tổng hợp (acesulfam kali (950)), chất bảo quản (kali sorbat (202)).',
-            dac_tinh: 'Sợi dai ngon, thấm đẫm nước sốt chua ngọt hài hòa, mang đến hương vị quyến rũ khiến bạn không thể ngừng đũa.',
-            bao_quan: 'Để nơi khô ráo, thoáng mát tránh ánh nắng mặt trời.',
-            hsd: '6 tháng kể từ ngày sản xuất.',
-            phan_phoi: ' CTY CO PHAN AECOOK VIET NAM - P.Tan Thanh, Q.Tan Phu'
+            img: require('../image_Ha/Danh Mục/bánh bao/bánh bao kim sa.png'),
+        name: 'Bánh bao kim sa BamBoo 240g - 10262',
+        price: '', /*giachuagiam*/
+        price_up: '42,900đ', /*giaban*/
+        thuong_hieu: '',
+        xuat_xu: '',
+        trong_luong: '',
+        thanh_phan: '',
+        dac_tinh: '',
+        bao_quan: '',
+        hsd: '',
+        phan_phoi: '',
+        type_DM: 'BanhBao'
         }
     );
     return (
