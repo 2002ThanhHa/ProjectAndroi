@@ -16,7 +16,7 @@ export default function TheThanhVien({navigation}) {
         
       </View>
       <View /*Center*/ >
-        <View style={{flexDirection:'row', marginLeft: 10}}>
+        <View style={{flexDirection:'row', marginLeft: 10, width:'100%'}}>
             <Text style={{fontSize: 18, fontWeight: '500', color: 'black', marginTop: 10, marginLeft: -10}}>Thẻ Thành Viên của bạn</Text>
             <Text style={{fontSize: 18, fontWeight: '400', color: 'gray', marginTop: 10, marginLeft: 10}}>Hủy liên kết thẻ</Text>
             <AntDesign name="minussquareo" size={22} color="#ea1717" style={{marginTop: 10, marginLeft: 10}}/>

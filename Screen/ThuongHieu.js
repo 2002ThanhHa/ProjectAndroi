@@ -359,9 +359,12 @@ export default function ThuongHieu({navigation}) {
   return (
     <View style={styles.container}>
       {/*Header*/}
-        <View /*Header*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 3650}}>       
+        <View /*Header*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 3700}}>       
         <View style={{flexDirection: 'row'}}>
-            <AntDesign name="enviromento" size={24} color="white" style={{marginLeft: 20, marginTop: 10}}/>
+            <Pressable  onPress={()=>{navigation.navigate("DiaChi")}}>
+                <AntDesign name="enviromento" size={24} color="white" style={{marginLeft: 20, marginTop: 10}}/>
+            </Pressable>
+            
             <Text style ={{fontSize: 20, color: 'white', fontWeight: '500', margin: 10, marginLeft: 5}}>GO! GÒ VẤP</Text>
             <Image source={require('../image/Polygon.png')} style={{width: 13, height: 7, margin: 24, marginLeft: -5, resizeMode:'contain'}}/>
         </View>
@@ -374,7 +377,9 @@ export default function ThuongHieu({navigation}) {
               <Image source={require('../image/TimKiem.png')} style={{width: 30, height: 35, margin: 5, marginLeft: 10, resizeMode:'contain'}}/>
               <Text style ={{fontSize: 18, margin: 7, marginLeft: -3}}>Hi, Bạn muốn tìm gì hôm nay</Text>
             </Pressable>
-            <AntDesign name="shoppingcart" size={32} color="white" style={{marginTop:5}} />
+            <Pressable  onPress={()=>{navigation.navigate('GioHang')}}>
+              <AntDesign name="shoppingcart" size={32} color="white" style={{ margin: 5 }} />
+            </Pressable>
         </View>
 
         <View>

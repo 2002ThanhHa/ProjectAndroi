@@ -121,13 +121,13 @@ export default function FlashSale({ navigation }) {
     return (
 
         <View style={{ backgroundColor: '#FBF0DE' }}>
-            <View style={{ width: '100%', padding: 10, flexDirection: 'row', backgroundColor: 'red' }}>
+            <View style={{ width: '100%', padding: 8, flexDirection: 'row', backgroundColor: 'red' }}>
                 <Pressable onPress={() => navigation.navigate('Home')}>
                     <AntDesign name="arrowleft" size={24} color="white" style={{ margin: 5 }} />
 
                 </Pressable>
-                <Pressable onPress={() => navigation.navigate('TimKiem')}
-                    style={{ width: 300, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 5, flexDirection: 'row' }}
+                <Pressable onPress={() => navigation.navigate('TimKiem1')}
+                    style={{ width: 280, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 5, flexDirection: 'row' }}
                 > <FontAwesome name="search" size={18} color="#ea1616" style={{ margin: 10 }} />
                     <Text style={{ fontSize: 14, margin: 10, marginLeft: -3 }}>Xin chào, Bạn muốn tìm gì hôm nay?</Text>
                 </Pressable>
@@ -139,7 +139,7 @@ export default function FlashSale({ navigation }) {
 
             <View style={{ flexDirection: 'row', borderBottomWidth: 3, borderColor: '#ea1616' }}>
 
-                <Pressable style={{ backgroundColor: '#ea1616', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 8, marginLeft: 30 }} onPress={() => { navigation.navigate("FlashSale") }}>
+                <Pressable style={{ backgroundColor: '#ea1616', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 8, marginLeft: 10 }} onPress={() => { navigation.navigate("FlashSale") }}>
                     <Text style={{ color: 'white', padding: 20, fontWeight: '600' }}> Ưu đãi hôm nay </Text>
 
                 </Pressable>
@@ -153,7 +153,7 @@ export default function FlashSale({ navigation }) {
             </View>
             <View /*header*/ style={{ flexDirection: 'row', backgroundColor: '#fff', height: 50, paddingTop: 5 }}>
 
-                <Text style={{ fontSize: 14, color: 'red', fontWeight: '700', marginTop: 10, marginLeft: 100 }}>Kết thúc trong</Text>
+                <Text style={{ fontSize: 14, color: 'red', fontWeight: '700', marginTop: 10, marginLeft: 80 }}>Kết thúc trong</Text>
 
                 <View style={{ width: 30, height: 30, backgroundColor: '#EA5858', marginTop: 5, borderRadius: 5, marginLeft: 6 }}>
                     <Text style={{ fontSize: 18, margin: 4, marginTop: 2, color: 'white', fontWeight: '500' }}>02</Text>
@@ -185,7 +185,7 @@ export default function FlashSale({ navigation }) {
             </View>
             <FlatList data={dataSanPham} renderItem={({ item }) => {
                 return (
-                    <Pressable style={{ margin: 5 }} onPress={() => { navigation.navigate({ name: 'SanPham', params: { item } }) }}>
+                    <Pressable style={{ }} onPress={() => { navigation.navigate({ name: 'SanPhamFlashSale', params: { item } }) }}>
                         <View style={{ flexDirection: 'row', backgroundColor: '#FBF0DE', height: 185, paddingTop: 5, borderBottomWidth: 0.5 }}>
                             <Image source={item.img} style={{ width: 135, height: 127, resizeMode: 'contain' }} />
 

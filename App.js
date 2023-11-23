@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DanhMuc from './Screen/DanhMuc';
 import Home from './Screen/Home';
-<<<<<<< HEAD
+
 import ThuongHieu from './Screen/ThuongHieu';
 import TheThanhVien from './Screen/TheThanhVien';
 import TimKiem1 from './Screen/TimKiem1';
@@ -14,7 +14,7 @@ import TaiKhoan from './Screen/TaiKhoan';
 import MaGiamGia from './Screen/MaGiamGia';
 
 
-=======
+
 import SanPham from './Screen/SanPham'
 import GioHang from './Screen/GioHang';
 import ChiTietSanPham from './Screen/ChiTietSanPham';
@@ -28,22 +28,16 @@ import DiaChi from './Screen/Daichi';
 import DiaChiN from './Screen/DiajChiN';
 import DiaChiT from './Screen/DiaChiT';
 import CuaHang from './Screen/CuaHang';
->>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
+import SanPhamGo from './Screen/SanPhamGo';
+import SanPhamFlashSale from './Screen/SanPhamFlashSale';
 const stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    //<Home/>
-    //<ThuongHieu/>
-    //<TheThanhVien/>
-    //<TimKiem1/>
-    //<TimKiem2/>
-    //<TaiKhoan/>
-    //<MaGiamGia/>
-    //<CuaHang/>
+   
     <NavigationContainer>
-<<<<<<< HEAD
-      <stack.Navigator mode='Home'>
+
+      <stack.Navigator >
         <stack.Screen options={{headerShown: false}} name ="Home" component={Home}></stack.Screen>
         <stack.Screen options={{headerShown: false}} name ="ThuongHieu" component={ThuongHieu}></stack.Screen>
         <stack.Screen options={{headerShown: false}} name ="TheThanhVien" component={TheThanhVien}></stack.Screen>
@@ -51,15 +45,10 @@ export default function App() {
         <stack.Screen options={{headerShown: false}} name ="TimKiem2" component={TimKiem2}></stack.Screen>
         <stack.Screen options={{headerShown: false}} name ="TaiKhoan" component={TaiKhoan}></stack.Screen>
         <stack.Screen options={{headerShown: false}} name ="MaGiamGia" component={MaGiamGia}></stack.Screen>
-      </stack.Navigator>
-    </NavigationContainer>
-
-  );
-=======
-      <stack.Navigator >
-        <stack.Screen options={{ headerShown: false }} name="Home" component={Home}></stack.Screen> 
         <stack.Screen options={{ headerShown: false }} name="DanhMuc" component={DanhMuc}></stack.Screen>
         <stack.Screen options={{ headerShown: false }} name="SanPham" component={SanPham}></stack.Screen>
+        <stack.Screen options={{ headerShown: false }} name="SanPhamGo" component={SanPhamGo}></stack.Screen>
+        <stack.Screen options={{ headerShown: false }} name="SanPhamFlashSale" component={SanPhamFlashSale}></stack.Screen>
         <stack.Screen options={{ headerShown: false }} name="GioHang" component={GioHang}></stack.Screen>
         <stack.Screen options={{ headerShown: false }} name="ChiTietSanPham" component={ChiTietSanPham}></stack.Screen>
         <stack.Screen options={{ headerShown: false }} name="ThongBao" component={ThongBao}></stack.Screen>
@@ -75,6 +64,6 @@ export default function App() {
          <stack.Screen options={{ headerShown: false }} name="CuaHang" component={CuaHang}></stack.Screen> 
       </stack.Navigator>
     </NavigationContainer>);
->>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
+
 }
 

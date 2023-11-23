@@ -5,14 +5,7 @@ import { useState } from 'react';
 import { Entypo } from '@expo/vector-icons'; 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons'; 
-import { FontAwesome5 } from '@expo/vector-icons';
-<<<<<<< HEAD
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
-
-=======
-import { MaterialCommunityIcons,SimpleLineIcons , Feather } from '@expo/vector-icons';
->>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
+import { FontAwesome5,MaterialCommunityIcons ,Feather  } from '@expo/vector-icons';
 
 const arr1 = [
   {
@@ -118,12 +111,10 @@ export default function Home({navigation}) {
   return (
     <View style={styles.container}>
     {/*Header*/}
-<<<<<<< HEAD
-      <View /*Header*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 2750}}>       
-=======
+
       <View /*Head*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 2800}}>       
       <Pressable onPress={()=>{navigation.navigate("DiaChi")}}>
->>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
+
         <View style={{flexDirection: 'row'}}>
           
             <AntDesign name="enviromento" size={24} color="white" style={{marginLeft: 20, marginTop: 10}}/>
@@ -141,7 +132,10 @@ export default function Home({navigation}) {
               <Image source={require('../image/TimKiem.png')} style={{width: 30, height: 35, margin: 5, marginLeft: 10, resizeMode:'contain'}}/>
               <Text style ={{fontSize: 18, margin: 7, marginLeft: -3}}>Hi, Bạn muốn tìm gì hôm nay</Text>
             </Pressable>
-            <Image source={require('../image/giohang.png')} style={{width: 45, height: 45, margin: -10, marginLeft: 5, resizeMode:'contain'}}/>
+            <Pressable  onPress={()=>{navigation.navigate('GioHang')}}>
+              <AntDesign name="shoppingcart" size={32} color="white" style={{ margin: 5 }} />
+            </Pressable>
+            
         </View>
 
         <View>
@@ -161,12 +155,8 @@ export default function Home({navigation}) {
         <View /*Cac muc lua chon*/ style={{width: '600', height: 200 ,margin: 5, flexDirection:'row'}}>
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //Logo GO
-<<<<<<< HEAD
-              onPress = {()=>{navigation.navigate('NhanHangGo')}}
-=======
-              //onPress 
               onPress={()=> {navigation.navigate("NhanHangGo")}}
->>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
+
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'#E51717', borderRadius:50}}
             >
                 <Image source={require('../image/logoGo.png')} style={{width: 55, height: 55, borderRadius:50, marginLeft: 5, margin:2}}/>
@@ -186,12 +176,10 @@ export default function Home({navigation}) {
           
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo Kiem Tra Gia
-<<<<<<< HEAD
-              onPress = {()=>{navigation.navigate('KiemTraGia')}}
-=======
-              //onPress
+
+              //onPressre
               onPress={()=> {navigation.navigate("KiemTraGia")}}
->>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
+
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoKiemTraGia.png')} style={{width: 70, height: 70, borderRadius:50, marginLeft: -6, margin:-5}}/>

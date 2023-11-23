@@ -16,7 +16,7 @@ export default function TaiKhoan({navigation}) {
     <View style={styles.container}>
       <View /*Header*/ style={{flexDirection:'row',backgroundColor: '#ea1717',width: '100%', height: 80}}>
         <Text style={{fontSize: 24, fontWeight:'600', marginLeft:10, marginTop: 20, color: 'white'}}>Tài khoản</Text>
-        <Fontisto name="bell-alt" size={28} color="white" style={{marginTop: 25, marginLeft: 230}}/>
+        <Fontisto name="bell-alt" size={28} color="white" style={{marginTop: 25, marginLeft: 180}}/>
       </View>
 
       <View /*Center*/ >
@@ -33,7 +33,7 @@ export default function TaiKhoan({navigation}) {
           <View style={{flexDirection:'row', width:'100%', height: 45, backgroundColor:'#F4F3F3'}}>
             <FontAwesome5 name="clipboard-list" size={24} color="#ea1717" style={{marginLeft: 10, marginTop:10}}/>
             <Text style={{fontSize: 22, fontWeight:'500', marginLeft: 10, marginTop:5}}>Lịch sử đơn hàng</Text>
-            <AntDesign name="right" size={24} color="gray" style={{marginLeft: 145, marginTop:10}}/>
+            <AntDesign name="right" size={24} color="gray" style={{marginLeft: 100, marginTop:10}}/>
           </View>
           
           <View style={{flexDirection:'row', width:'100%', height: 120}}>
@@ -62,7 +62,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <MaterialCommunityIcons name="star-box" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}}/>
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Ưu đãi của tôi</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 220, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 170, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -71,7 +71,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
             <Entypo name="heart-outlined" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}}/>
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Sản phẩm yêu thích</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 180, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 130, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -80,7 +80,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <FontAwesome name="credit-card" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Thẻ thành viên</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 215, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 160, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -89,7 +89,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <Octicons name="history" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Lịch sử điểm</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 230, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 180, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -98,7 +98,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
             <MaterialCommunityIcons name="receipt" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Hóa đơn</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 260, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 210, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -107,7 +107,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <MaterialIcons name="store-mall-directory" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}}/>
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Cửa hàng</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 255, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 200, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -116,7 +116,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
             <Entypo name="text-document" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Bảng tin</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 260, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 210, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -133,7 +133,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
             <Entypo name="help-with-circle" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Câu hỏi thường gặp</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 220, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 120, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -142,7 +142,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <Feather name="phone-call" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}}/>
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Gọi tổng đài 1900 1880</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 190, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 95, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -151,7 +151,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
             <Feather name="shopping-bag" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Hướng dẫn mua hàng và thanh toán</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 90, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginTop:12}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -160,7 +160,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
             <MaterialCommunityIcons name="truck-delivery" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Chính sách vận chuyển và giao hàng</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 90, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{ marginTop:12}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -168,8 +168,8 @@ export default function TaiKhoan({navigation}) {
           <View>
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <Ionicons name="document-text" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}}/>
-              <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Điều khoản và điều kiện sử dụng dịch vụ</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 60, marginTop:8}}/>
+              <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Điều khoản và điều kiện sử dụng...</Text>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 15, marginTop:12}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -178,7 +178,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <Ionicons name="shield-checkmark" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}}/>
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Chính sách bảo mật thông tin</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 140, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 50, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -187,7 +187,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <MaterialIcons name="ballot" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Quy chế hoạt động</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 220, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 130, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -196,7 +196,7 @@ export default function TaiKhoan({navigation}) {
             <View style={{width:'100%', height: 60, flexDirection:'row'}}>
               <MaterialCommunityIcons name="account-remove" size={24} color="#ea1717" style={{marginLeft: 5, marginTop:10}} />
               <Text style={{fontSize: 17, marginLeft: 10, marginTop: 10}}>Yêu cầu xóa tài khoản</Text>
-              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 200, marginTop:8}}/>
+              <AntDesign name="right" size={18} color="gray" style={{marginLeft: 110, marginTop:8}}/>
             </View>
             <View style={{width: '100%', height: 0.5, backgroundColor: 'gray', marginTop: -10}}></View>
           </View>
@@ -278,8 +278,8 @@ export default function TaiKhoan({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+   
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    
   },
 });

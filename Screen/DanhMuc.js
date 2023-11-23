@@ -664,20 +664,23 @@ export default function DanhMuc({ navigation }) {
         <View style={{ backgroundColor: '#f8f4f4' }}>
             <View /*Head*/ style={{ backgroundColor: '#ea1717' }}>
                 <View style={{ flexDirection: 'row', margin: 10 }}>
-                    <Ionicons name="location-outline" size={16} color="white" />
-
+                    <Pressable  onPress={()=>{navigation.navigate('DiaChi')}}>
+                        <Ionicons name="location-outline" size={16} color="white" />
+                    </Pressable>
                     <Text style={{ fontSize: 15, color: 'white', fontWeight: '500', marginLeft: 10 }}>GO! GÒ VẤP</Text>
                     <AntDesign name="caretdown" size={10} color="white" style={{ margin: 5 }} />
 
                 </View>
 
                 <View style={{ width: '100%', height: 50, flexDirection: 'row' }}>
-                    <Pressable //onPress
-                        style={{ width: 320, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 20, flexDirection: 'row' }}
+                    <Pressable  onPress={()=>{navigation.navigate('TimKiem1')}}
+                        style={{ width: 280, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 20, flexDirection: 'row' }}
                     > <FontAwesome name="search" size={18} color="#ea1616" style={{ margin: 10 }} />
                         <Text style={{ fontSize: 14, margin: 10, marginLeft: -3 }}>Xin chào, Bạn muốn tìm gì hôm nay?</Text>
                     </Pressable>
-                    <AntDesign name="shoppingcart" size={32} color="white" style={{ margin: 5 }} />
+                    <Pressable  onPress={()=>{navigation.navigate('GioHang')}}>
+                        <AntDesign name="shoppingcart" size={32} color="white" style={{ margin: 5 }} />
+                    </Pressable>
                 </View>
 
 

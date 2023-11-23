@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Ionicons, AntDesign, FontAwesome, Fontisto, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
-export default function SanPham({ navigation, route }) {
+export default function SanPhamGo({ navigation, route }) {
     const [item, setItem] = useState(
         route.params?.item || {
             img: require('../image_Ha/Danh Mục/bánh bao/bánh bao kim sa.png'),
@@ -27,7 +27,7 @@ export default function SanPham({ navigation, route }) {
         <View style={styles.component}>
             <View style={{ backgroundColor: "#fff" }}>
                 <View style={{ flexDirection: 'row' }}>
-                    <Pressable onPress={() => { navigation.navigate("DanhMuc") }}>
+                    <Pressable onPress={() => { navigation.navigate("NhanHangGo") }}>
                         <AntDesign name="arrowleft" size={32} color="red" />
                     </Pressable>
                     <Pressable onPress={() => { navigation.navigate({ name: 'GioHang', params: { item } }) }} style={{ backgroundColor: 'red', flexDirection: 'row', marginLeft: 250, width: 120, borderRadius: 10 }}>

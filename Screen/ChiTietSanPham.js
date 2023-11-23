@@ -22,66 +22,66 @@ export default function ChiTietSanPham({ navigation, route }) {
     return (
         <View style={styles.component}>
             <View style={{ flexDirection: 'row', margin: 15 }}>
-                < Text style={{ fontSize: 16, fontWeight: 'bold' }}>Chi tiết sản phẩm</Text>
-                <Pressable style={{ marginLeft: 200, }} onPress={() => { navigation.navigate("SanPham") }}>
+                <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Chi tiết sản phẩm</Text>
+                <Pressable style={{ marginLeft: 150, }} onPress={() => { navigation.navigate("SanPham") }}>
                     <AntDesign name="closecircleo" size={24} color="red" />
                 </Pressable>
             </View>
 
             <View style={{ marginTop: 5, backgroundColor: "#fff" }}>
-                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Hình ảnh sản phẩm </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.hasp}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.hasp}</Text></View>
 
                 </View>
-                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Thương hiệu/ Xuất xứ thương hiệu </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.thuong_hieu}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.thuong_hieu}</Text></View>
 
                 </View>
-                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Sản xuất tại </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.xuat_xu}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.xuat_xu}</Text></View>
 
                 </View>
-                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Trọng lượng/ Dung tích  </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.trong_luong}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.trong_luong}</Text></View>
 
                 </View>
-                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Thành phần </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.thanh_phan}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.thanh_phan}</Text></View>
 
                 </View>
-                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Đặc tính hàng hóa </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.dac_tinh}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.dac_tinh}</Text></View>
 
                 </View>
-                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Hướng dẫn sử dụng </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.sudung}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.sudung}</Text></View>
 
                 </View>
-                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Hướng dẫn bảo quản </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.bao_quan}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.bao_quan}</Text></View>
 
                 </View>
-                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Hạn sử dụng </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.hsd}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.hsd}</Text></View>
 
                 </View>
-                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 }}>
+                <View style={{ flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 }}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Lưu ý </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.luuy}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.luuy}</Text></View>
 
                 </View>
-                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 20, borderTopWidth: 1 ,borderBottomWidth:1}}>
+                <View style={{ backgroundColor: '#c6d0d4', flexDirection: 'row', width: '90%', marginLeft: 10, borderTopWidth: 1 ,borderBottomWidth:1}}>
                     <View style={{ borderLeftWidth: 1, borderRightWidth: 1, width: 170 }}> <Text style={{ margin: 5, fontSize: 13 }}>Tổ chức/ địa chỉ tổ chức chịu trách nhiệm về hàng hóa </Text></View>
-                    <View style={{ borderRightWidth: 1, width: 180 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.phan_phoi}</Text></View>
+                    <View style={{ borderRightWidth: 1, width: 155 }}><Text style={{ margin: 5, fontSize: 13 }}> {item.phan_phoi}</Text></View>
 
                 </View>
                

@@ -23,16 +23,16 @@ export default function GioHang({ navigation, route }) {
 
         <View style={{ backgroundColor: '#f8f4f4' }}>
             <View style={{ flexDirection: 'row', margin: 10 }}>
-                <Pressable style={{}} onPress={() => { navigation.navigate("SanPham") }}>
+                <Pressable style={{}} onPress={() => { navigation.navigate("Home") }}>
                     <AntDesign name="arrowleft" size={24} color="red" />
                 </Pressable>
-                < Text style={{ fontSize: 20, fontWeight: '700', marginLeft: 80 }}>Giỏ hàng của bạn</Text>
+                <Text style={{ fontSize: 20, fontWeight: '700', marginLeft: 80 }}>Giỏ hàng của bạn</Text>
 
-            </View>
-            <View style={{ flexDirection: 'row' }}>
+            </View>, 
+            <View style={{ flexDirection: 'row', width:'100%' }}>
 
                 <Text style={{ fontSize: 14, fontWeight: '600' }}> Danh sách sản phẩm trong giỏ hàng</Text>
-                <Text style={{ fontSize: 14, fontWeight: '600', color: 'gray', marginLeft: 50 }}> Xem đầy đủ</Text>
+                <Text style={{ fontSize: 14, fontWeight: '600', color: 'gray', marginLeft: 20 }}> Xem đầy đủ</Text>
                 <AntDesign name="doubleright" size={12} color="gray" style={{ margin: 5 }} />
             </View>
             <View style={{ flexDirection: 'row', marginTop: 15, backgroundColor: '#fff' }}>

@@ -382,11 +382,11 @@ export default function NhanHangGo({ navigation }) {
         <View style={{ backgroundColor: '#f8f4f4' }}>
             <View style={{ width: '100%', padding: 10, flexDirection: 'row', backgroundColor: 'red' }}>
                 <Pressable onPress={() => navigation.navigate('Home')}>
-                    <AntDesign name="arrowleft" size={24} color="white" style={{ margin: 5 }} />
+                    <AntDesign name="arrowleft" size={24} color="white" style={{ margin: 3 }} />
 
                 </Pressable>
                 <Pressable onPress={() => navigation.navigate('TimKiem')}
-                    style={{ width: 300, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 5, flexDirection: 'row' }}
+                    style={{ width: 280, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 5, flexDirection: 'row' }}
                 > <FontAwesome name="search" size={18} color="#ea1616" style={{ margin: 10 }} />
                     <Text style={{ fontSize: 14, margin: 10, marginLeft: -3 }}>Xin chào, Bạn muốn tìm gì hôm nay?</Text>
                 </Pressable>
@@ -409,7 +409,7 @@ export default function NhanHangGo({ navigation }) {
             </View>
             <FlatList data={dataSanPham} renderItem={({ item }) => {
                 return (
-                    <Pressable style={{ margin: 5 }} onPress={() => { navigation.navigate({ name: 'SanPham', params: { item } }) }}>
+                    <Pressable style={{ margin: 5 }} onPress={() => { navigation.navigate({ name: 'SanPhamGo', params: { item } }) }}>
                         <View style={{ flexDirection: 'row', backgroundColor: '#fff' }}>
                             <Image source={item.img} style={{ width: 135, height: 127, resizeMode: 'contain' }} />
 
