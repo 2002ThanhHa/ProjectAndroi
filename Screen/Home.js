@@ -112,11 +112,15 @@ export default function Home({navigation}) {
     <View style={styles.container}>
     {/*Header*/}
       <View /*Head*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 2800}}>       
+      <Pressable onPress={()=>{navigation.navigate("DiaChi")}}>
         <View style={{flexDirection: 'row'}}>
+          
             <AntDesign name="enviromento" size={24} color="white" style={{marginLeft: 20, marginTop: 10}}/>
             <Text style ={{fontSize: 20, color: 'white', fontWeight: '500', margin: 10, marginLeft: 5}}>GO! GÒ VẤP</Text>
             <Image source={require('../image/Polygon.png')} style={{width: 13, height: 7, margin: 24, marginLeft: -5, resizeMode:'contain'}}/>
+            
         </View>
+        </Pressable>
 
         <View style={{width: '100%', height: 50, flexDirection:'row'}}>
             <Pressable //onPress
