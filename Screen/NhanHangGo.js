@@ -1,198 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Pressable, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
-import { Ionicons, AntDesign, FontAwesome, Feather, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
-
-const danhMuc = [
-    {
-        id: 1,
-        name: 'Luôn Luôn Rẻ Hơn',
-        img: require('../image_Ha/Danh Mục/Dm/luon_re_hon.jpg'),
-    },
-    {
-        id: 2,
-        name: 'Halloween',
-        img: require('../image_Ha/Danh Mục/Dm/halowen.jpg'),
-    },
-    {
-        id: 3,
-        name: 'Đồ ăn sẵn',
-        img: require('../image_Ha/Danh Mục/Dm/do-an-nhanh.jpg'),
-    },
-    {
-        id: 4,
-        name: 'Bánh Ngọt & Bánh Mì',
-        img: require('../image_Ha/Danh Mục/Dm/banh_my.jpg'),
-    },
-    {
-        id: 5,
-        name: 'Rau Củ - Đậu Hủ',
-        img: require('../image_Ha/Danh Mục/Dm/rau-củ.png'),
-    },
-    {
-        id: 6,
-        name: 'Trái Cây',
-        img: require('../image_Ha/Danh Mục/Dm/trái-cây.jpg'),
-    },
-    {
-        id: 7,
-        name: 'Trái Cây Nhập Khẩu',
-        img: require('../image_Ha/Danh Mục/Dm/trái-cây-nhập-khẩu.jpg'),
-    },
-    {
-        id: 8,
-        name: 'Hoa Tươi & Hạt Giống',
-        img: require('../image_Ha/Danh Mục/Dm/hoa 1.jpg'),
-    },
-    {
-        id: 9,
-        name: 'Thịt - Hải Sản Tươi',
-        img: require('../image_Ha/Danh Mục/Dm/ca-tuoi.jpg'),
-    },
-    {
-        id: 10,
-        name: 'Thịt - Hải Sản Đông',
-        img: require('../image_Ha/Danh Mục/Dm/ca-dong.jpg'),
-    },
-    {
-        id: 11,
-        name: 'TP Đông Lạnh Khác',
-        img: require('../image_Ha/Danh Mục/Dm/thuc-pham-dong-lanh-quang-ngai.jpg'),
-    },
-    {
-        id: 12,
-        name: 'Đồ Hộp ',
-        img: require('../image_Ha/Danh Mục/Dm/do-hop.jpg'),
-    },
-    {
-        id: 13,
-        name: 'Mì Gói, TP Ăn Liền',
-        img: require('../image_Ha/Danh Mục/Dm/mi-goi.jpg'),
-    },
-    {
-        id: 14,
-        name: 'Thực Phẩm Khô',
-        img: require('../image_Ha/Danh Mục/Dm/tp-kho.jpg'),
-    },
-    {
-        id: 15,
-        name: 'Nguyên Liệu - Gia Vị',
-        img: require('../image_Ha/Danh Mục/Dm/gia vi.jpg'),
-    },
-    {
-        id: 16,
-        name: 'Xúc Xich, Giò Chả',
-        img: require('../image_Ha/Danh Mục/Dm/xuc-xich.png'),
-    },
-    {
-        id: 17,
-        name: 'Bánh Bao',
-        img: require('../image_Ha/Danh Mục/Dm/banh-bao.jpg'),
-    },
-    {
-        id: 18,
-        name: 'Trứng',
-        img: require('../image_Ha/Danh Mục/Dm/trung.jpg'),
-    },
-    {
-        id: 19,
-        name: 'Sữa Tươi',
-        img: require('../image_Ha/Danh Mục/Dm/milk.jpg'),
-    },
-    {
-        id: 20,
-        name: 'Sữa Đặc & Sữa Bột',
-        img: require('../image_Ha/Danh Mục/Dm/sua.jpg'),
-    },
-    {
-        id: 21,
-        name: 'TP Chế Biến Từ Sữa',
-        img: require('../image_Ha/Danh Mục/Dm/tp-che-bien-tu-sau.jpg'),
-    },
-
-    {
-        id: 22,
-        name: 'Tã & Sữa cho bé',
-        img: require('../image_Ha/Danh Mục/Dm/tã.jpg'),
-    },
-    {
-        id: 23,
-        name: 'Chăm Sóc Cho Bé',
-        img: require('../image_Ha/Danh Mục/Dm/binh-sua-cho-be.jpg'),
-    },
-    {
-        id: 24,
-        name: 'Bánh Kẹo',
-        img: require('../image_Ha/Danh Mục/Dm/banh-keo.jpg'),
-    },
-    {
-        id: 25,
-        name: 'Snack, Đậu, Trái Cây',
-        img: require('../image_Ha/Danh Mục/Dm/snack.png'),
-    },
-    {
-        id: 26,
-        name: 'Trà & Cà Phê',
-        img: require('../image_Ha/Danh Mục/Dm/tra-cafe.jpg'),
-    },
-    {
-        id: 27,
-        name: 'Nước Giải Khát',
-        img: require('../image_Ha/Danh Mục/Dm/nuoc-gia-khat.jpg'),
-    },
-    {
-        id: 28,
-        name: 'Bia & Rượu',
-        img: require('../image_Ha/Danh Mục/Dm/bia-ruou.jpg'),
-    },
-    {
-        id: 29,
-        name: 'Chăm Sóc Cá Nhân',
-        img: require('../image_Ha/Danh Mục/Dm/dau-goi.jpg'),
-    },
-    {
-        id: 30,
-        name: 'Thức Uống Dinh Dưỡng',
-        img: require('../image_Ha/Danh Mục/Dm/tu-đ.jpg'),
-    },
-    {
-        id: 31,
-        name: 'Mỹ Phẩm',
-        img: require('../image_Ha/Danh Mục/Dm/my-pham.jpg'),
-    },
-    {
-        id: 32,
-        name: 'Hóa Phẩm & Tẩy Rửa',
-        img: require('../image_Ha/Danh Mục/Dm/hoa-my-pham-7.jpg'),
-    },
-    {
-        id: 33,
-        name: 'Khăn, Giấy Vệ Sinh',
-        img: require('../image_Ha/Danh Mục/Dm/giay.png'),
-    },
-    {
-        id: 34,
-        name: 'Đồ Điện Gia Dụng',
-        img: require('../image_Ha/Danh Mục/Dm/Do-dung-gia-dinh.jpg'),
-    },
-    {
-        id: 35,
-        name: 'Đồ Điện Gia Đình',
-        img: require('../image_Ha/Danh Mục/Dm/do-dien.jpg'),
-    },
-    {
-        id: 36,
-        name: 'Đồ Dùng Nhà Bếp',
-        img: require('../image_Ha/Danh Mục/Dm/đồ-nhà bếp.jpg'),
-    },
-    {
-        id: 37,
-        name: 'Thời Trang Nữ',
-        img: require('../image_Ha/Danh Mục/Dm/thoi-trang-nu.jpg'),
-    },
-
-]
+import { Feather, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons, AntDesign, FontAwesome } from '@expo/vector-icons';
 const sanPham = [
+    {
+
+        img: require('../image_Ha/Nhãn Hàng/du/cafe.jpg'),
+        name: 'Cà phê rang xay GO! túi 200g - 22103',
+        price: '', /*giachuagiam*/
+        price_up: '42,900đ', /*giaban*/
+
+        xuat_xu: 'Việt Nam',
+        trong_luong: '200g',
+        thanh_phan: 'Cà phê Arabica, cà phê Catimor, cà phê Excelsa, cà phê Robusta.',
+        sudung: 'Cho vào phin khoảng 2 - 3 muỗng cà phê bột (15 - 25g cà phê), dùng nắp có lỗ để nén cà phê lại. Chế vào phin khoảng 30ml nước nóng, để khoảng 2 phút cho cà phê nở, sau đó chế thêm khoảng 40 - 60ml nước nóng và chờ cho cà phê chảy hết. Dùng nóng hoặc thêm đá viên để uống lạnh, có thể thêm đường hoặc sữa tùy theo sở thích. Sản phẩm cũng có thể dùng cho pha bằng máy.',
+
+        dac_tinh: '',
+        bao_quan: 'Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Gói kín khi không sử dụng hết.',
+        hsd: '12 tháng kể từ ngày sản xuất.',
+        luuy: 'Không sử dụng sản phẩm có dấu hiệu hư hỏng hoặc hết hạn sử dụng.',
+        phan_phoi: 'CÔNG TY TNHH DỊCH VỤ EB, Số 163 Đường Phan Đăng Lưu, P.1, Q. Phú Nhuận, TP. Hồ Chí Minh, Việt Nam.',
+        type_DM: 'uong'
+    },
+    {
+
+        img: require('../image_Ha/Danh Mục/khăn/bless.jpg'),
+        name: 'Giấy vệ sinh Blessyou Alavie 10 cuộn - 00723',
+        price: '', /*giachuagiam*/
+        price_up: '96,300đ', /*giaban*/
+        thuong_hieu: 'Bless You (Việt Nam)',
+        xuat_xu: 'Việt Nam',
+        trong_luong: '10 cuộn',
+        thanh_phan: '100% bột giấy nguyên thủy',
+        sudung: 'Có thể sử dụng giấy vệ sinh trong việc chăm sóc cá nhân, lau chùi các vật dụng trong gia đình và vệ sinh nhà bếp hiệu quả',
+        bao_quan: 'Có thể sử dụng giấy vệ sinh trong việc chăm sóc cá nhân, lau chùi các vật dụng trong gia đình và vệ sinh nhà bếp hiệu quả',
+        hsd: '02 năm kể từ ngày sản xuất',
+        phan_phoi: 'CONG TY CO PHAN GIAY SAI GON - Khu CN My Xuan A, Tan Thanh, Ba Ria Vung Tau',
+        type_DM: 'dung'
+    },
+
     {
 
         img: require('../image_Ha/Danh Mục/bánh bao/bánh bao kim sa.png'),
@@ -207,7 +54,7 @@ const sanPham = [
         bao_quan: '',
         hsd: '',
         phan_phoi: '',
-        type_DM: 'BanhBao'
+        type_DM: 'lanh'
     },
     {
 
@@ -223,7 +70,7 @@ const sanPham = [
         bao_quan: '',
         hsd: '',
         phan_phoi: '',
-        type_DM: 'HSTuoi'
+        type_DM: 'tuoi'
     },
 
     {
@@ -276,7 +123,7 @@ const sanPham = [
         bao_quan: 'Để nơi khô ráo, thoáng mát tránh ánh nắng mặt trời.',
         hsd: '12 tháng kể từ ngày sản xuất.',
         phan_phoi: 'CONG TY CP HANG TIEU DUNG MASAN - Phường 9.6,9.7 Tòa nhà E-Town 2,364 Cộng Hòa, P.13, Quận Tân Bình',
-        type_DM: 'MyGoi'
+        type_DM: 'kho'
     },
     {
         img: require('../image_Ha/Danh Mục/mỹ phẩm/nau.png'),
@@ -292,7 +139,7 @@ const sanPham = [
         bao_quan: 'Bảo quản sản phẩm ở những nơi khô ráo, thoáng mát tránh tiếp xúc trực tiếp với ánh nắng hoặc ở những nơi có nhiệt độ cao',
         hsd: '5 năm kể từ ngày sản xuất',
         phan_phoi: 'CONG TY TNHH DV TM THANH NGOC (FC)- F1-F2 KHU NAM LONH P.TAN THUAN DONG,Q.7',
-        type_DM: 'MyPham'
+        type_DM: 'kho'
 
     },
     {
@@ -311,80 +158,9 @@ const sanPham = [
         hsd: '',
         luuy: '',
         phan_phoi: '',
-        type_DM: 'BanhKeo'
+        type_DM: 'lanh'
     },
-    {
-        img: require('../image_Ha/Danh Mục/rau củ/bi-dao.jpg'),
-        name: 'Bí xanh trái - 60947',
-        price: '', /*giachuagiam*/
-        price_up: '9,500đ', /*giaban*/
-        hasp: '',
-        thuong_hieu: '',
-        xuat_xu: '',
-        trong_luong: '',
-        thanh_phan: '',
-        sudung: '',
-        dac_tinh: '',
-        bao_quan: '',
-        hsd: '',
-        luuy: '',
-        phan_phoi: '',
-        type_DM: 'BanhKeo'
-    },
-    {
-        img: require('../image_Ha/Danh Mục/bánh kẹo/yopokki.jpg'),
-        name: 'Bánh gạo Yopokki xốt kim chi Hàn QUốc 115g - 01915',
-        price: '', /*giachuagiam*/
-        price_up: '44,100đ', /*giaban*/
-        hasp: 'có thể khác với thực tế do thay đổi bao bì từ nhà cung cấp.',
-        thuong_hieu: 'Yopokki (Hàn Quốc)',
-        xuat_xu: 'Hàn Quốc',
-        trong_luong: '115g',
-        thanh_phan: 'Bánh gạo, đường, muối, tỏi, gia vị hỗn hợp,...',
-        sudung: '+ Sử dụng chảo - Cho 100ml nước vào chảo. Khi nước sôi cho bánh gạo và gói bột súp vào. Đảo đều và nấu đến khi bánh gạo chín mềm và nước sốt sệt lại. + Sử dụng lò vi sóng - Cho bánh gạo và gói bột súp vào cốc. Đổ thêm nước đến vạch chỉ định và trộn đều. Cho vào lò vi sóng trong 1 phút 30 giây (1000W) hoặc 2 phút 30 giây (700W) để bánh gạo chín mềm và nước sốt sệt lại. Tuy theo khẩu vị, có thể nấu với chả cá, mì, xúc xích, trứng và các loại rau củ để món bánh gạo Yopokki ngon miệng hơn.',
-        dac_tinh: 'Bánh gạo Hàn Quốc là món ăn quen thuộc và được nhiều người Việt Nam yêu thích. Bánh gạo Yopokki xốt kim chi Hàn Quốc ly 115g với nước xốt cay cay thơm nồng hương kim chi cùng bánh gạo dẻo nóng hấp dẫn. Bạn có thể dùng bánh gạo Yopokki cùng rau củ và chả cá, xúc xích để tăng thêm hương vị món ăn.',
-        bao_quan: 'Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp.',
-        hsd: '12 tháng kể từ ngày sản xuất',
-        luuy: 'Không nên sử dụng nếu dị ứng thành phần sản phẩm, sản phẩm có dấu hiệu ẩm mốc, hết hạn để tránh gây ảnh hưởng không tốt đến sức khỏe',
-        phan_phoi: 'CTY CO PHAN SXTMDV PHỤC THINH - 16 Ngach 97/4, Pho Pham Ngoc Thach, P.Kim Lien,Q.Dong Da',
-        type_DM: 'BanhKeo'
-    },
-    {
-        img: require('../image_Ha/Danh Mục/bánh kẹo/cosy-vi-que.jpg'),
-        name: 'Bánh quế Cosy dứa 126g - 33107',
-        price: '', /*giachuagiam*/
-        price_up: '13,400đ', /*giaban*/
-        hasp: 'có thể khác với thực tế do thay đổi bao bì từ nhà cung cấp.',
-        thuong_hieu: 'Cosy (Việt Nam)',
-        xuat_xu: 'Việt Nam',
-        trong_luong: '126g',
-        thanh_phan: 'Bột mì, đường, dầu cọ, bột whey, bột bắp, chất nhũ hoá (322(i)), đường glucose, hương thực phẩm tổng hợp (vani, dứa), muối, chất điều chỉnh độ acid (330), chất giữ ẩm (420(ii)), màu thực phẩm tổng hợp (129).',
-        sudung: 'Dùng trực tiếp',
-        dac_tinh: 'Bánh quế thơm ngon, giòn tan đậm vị kem dâu. Bánh quế vị kem dứa Cosy gói 126 g là sản phẩm chất lượng đến từ bánh quế Cosy, hương vị thơm ngon, kích thích vị giác mà không ngán khi ăn. Bánh quế có thể sử dụng để ăn vặt hoặc trang trí những món ngọt tùy thích như kem, puding.....',
-        bao_quan: 'Bảo quản nơi khô ráo và thoáng mát, tránh ánh nắng trực tiếp, đậy kín bao bì sau mỗi lần sử dụng.',
-        hsd: '10 tháng kể từ ngày sản xuất.',
-        luuy: '10 tháng kể từ ngày sản xuất.',
-        phan_phoi: 'CTY TNHH MTV KINH DO MIEN BAC - KM22-QUOC LO 5A-TT AN YEN NHAN,MY HAO HUNG YEN',
-        type_DM: 'BanhKeo'
-    },
-    {
-        img: require('../image_Ha/Danh Mục/bánh kẹo/que.jpg'),
-        name: 'Bánh quế Cosy socola 126g - 33107',
-        price: '', /*giachuagiam*/
-        price_up: '13,400đ', /*giaban*/
-        hasp: 'có thể khác với thực tế do thay đổi bao bì từ nhà cung cấp.',
-        thuong_hieu: 'Cosy (Việt Nam)',
-        xuat_xu: 'Việt Nam',
-        trong_luong: '126g',
-        thanh_phan: 'Bột mì, đường, dầu cọ, bột whey, bột bắp, chất nhũ hoá (322(i)), đường glucose, hương thực phẩm tổng hợp (vani, dứa), muối, chất điều chỉnh độ acid (330), chất giữ ẩm (420(ii)), màu thực phẩm tổng hợp (129).',
-        sudung: 'Dùng trực tiếp',
-        dac_tinh: 'Bánh quế thơm ngon, giòn tan đậm vị kem dâu. Bánh quế vị kem dứa Cosy gói 126 g là sản phẩm chất lượng đến từ bánh quế Cosy, hương vị thơm ngon, kích thích vị giác mà không ngán khi ăn. Bánh quế có thể sử dụng để ăn vặt hoặc trang trí những món ngọt tùy thích như kem, puding.....',
-        bao_quan: 'Bảo quản nơi khô ráo và thoáng mát, tránh ánh nắng trực tiếp, đậy kín bao bì sau mỗi lần sử dụng.',
-        hsd: '10 tháng kể từ ngày sản xuất.',
-        luuy: '10 tháng kể từ ngày sản xuất.',
-        phan_phoi: 'CTY TNHH MTV KINH DO MIEN BAC - KM22-QUOC LO 5A-TT AN YEN NHAN,MY HAO HUNG YEN',
-        type_DM: 'BanhKeo'
-    },
+
     {
         img: require('../image_Ha/Danh Mục/bánh kẹo/que-dau.jpg'),
         name: 'Bánh quế Cosy dâu 126g - 33107',
@@ -416,67 +192,7 @@ const sanPham = [
         phan_phoi: 'Hệ thống siêu thị Go!/BigC',
         type_DM: 'BanhMy'
     },
-    {
-        img: require('../image_Ha/Danh Mục/bánh ngọt/Bm ham.png'),
-        name: 'Lô 2 bánh Hambuiger 120g - 55216',
-        price: '', /*giachuagiam*/
-        price_up: '10,000đ', /*giaban*/
-        hasp: 'có thể khác với thực tế do thay đổi bao bì từ nhà cung cấp.',
-        xuat_xu: 'Việt Nam',
-        trong_luong: '120g x 2',
-        hsd: '3 ngày kể từ ngày sản xuất',
-        luuy: 'không sử dụng sản phẩm khi có dấu hiệu hư hỏng',
-        type_DM: 'BanhMy'
-    },
-    {
-        img: require('../image_Ha/Danh Mục/bánh ngọt/sandwich lát.jpg'),
-        name: 'Lô 2 sandwich 300g - 05467',
-        price: '', /*giachuagiam*/
-        price_up: '34,000đ', /*giaban*/
-        hasp: '',
-        xuat_xu: '',
-        trong_luong: '',
-        hsd: '',
-        luuy: '',
-        phan_phoi: '',
-        type_DM: 'BanhMy'
-    },
-    {
-        img: require('../image_Ha/Danh Mục/bánh ngọt/banh-mi-bo-toi.jpg'),
-        name: 'Bánh mỳ bơ 180g - 55923',
-        price: '', /*giachuagiam*/
-        price_up: '9,000đ', /*giaban*/
-        hasp: 'có thể khác với thực tế do thay đổi bao bì từ nhà cung cấp.',
-        xuat_xu: 'Việt Nam',
-        trong_luong: '180g',
-        hsd: 'trong 2 ngày',
-        phan_phoi: 'Hệ thống siêu thị Go!/BigC',
-        type_DM: 'BanhMy'
-    },
-    {
-        img: require('../image_Ha/Danh Mục/bánh ngọt/BM baguette dd.png'),
-        name: 'Bánh mỳ Baguette mè 190g - 55783',
-        price: '', /*giachuagiam*/
-        price_up: '5,900đ', /*giaban*/
-        hasp: 'có thể khác với thực tế do thay đổi bao bì từ nhà cung cấp.',
-        xuat_xu: 'Việt Nam',
-        trong_luong: '190g',
-        hsd: 'trong 1 ngày',
-        phan_phoi: 'Hệ thống siêu thị Go!/BigC',
-        type_DM: 'BanhMy'
-    },
-    {
-        img: require('../image_Ha/Danh Mục/bánh ngọt/BM baguette nho.png'),
-        name: 'Bánh mỳ Baguette 200g - 55965',
-        price: '', /*giachuagiam*/
-        price_up: '3,800đ', /*giaban*/
-        hasp: 'có thể khác với thực tế do thay đổi bao bì từ nhà cung cấp.',
-        xuat_xu: 'Việt Nam',
-        trong_luong: '200g',
-        hsd: 'trong 1 ngày',
-        phan_phoi: 'Hệ thống siêu thị Go!/BigC',
-        type_DM: 'BanhMy'
-    },
+
     {
         img: require('../image_Ha/Danh Mục/cs bé/TD.jpg'),
         name: 'Nước súc miệng Thái Dương trẻ em 250ml - 01237 ',
@@ -656,128 +372,86 @@ const sanPham = [
 
 
 
+
 ]
-export default function DanhMuc({ navigation }) {
-    const [data1, setData1] = useState(danhMuc);
+export default function NhanHangGo({ navigation }) {
+    const [selection, setSelection] = useState(1);
     const [dataSanPham, setDataSanPham] = useState(sanPham);
     return (
+
         <View style={{ backgroundColor: '#f8f4f4' }}>
-            <View /*Head*/ style={{ backgroundColor: '#ea1717' }}>
-                <View style={{ flexDirection: 'row', margin: 10 }}>
-                    <Ionicons name="location-outline" size={16} color="white" />
+            <View style={{ width: '100%', padding: 10, flexDirection: 'row', backgroundColor: 'red' }}>
+                <Pressable onPress={() => navigation.navigate('Home')}>
+                    <AntDesign name="arrowleft" size={24} color="white" style={{ margin: 5 }} />
 
-                    <Text style={{ fontSize: 15, color: 'white', fontWeight: '500', marginLeft: 10 }}>GO! GÒ VẤP</Text>
-                    <AntDesign name="caretdown" size={10} color="white" style={{ margin: 5 }} />
-
-                </View>
-
-                <View style={{ width: '100%', height: 50, flexDirection: 'row' }}>
-                    <Pressable //onPress
-                        style={{ width: 320, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 20, flexDirection: 'row' }}
-                    > <FontAwesome name="search" size={18} color="#ea1616" style={{ margin: 10 }} />
-                        <Text style={{ fontSize: 14, margin: 10, marginLeft: -3 }}>Xin chào, Bạn muốn tìm gì hôm nay?</Text>
-                    </Pressable>
-                    <AntDesign name="shoppingcart" size={32} color="white" style={{ margin: 5 }} />
-                </View>
-
-
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('TimKiem')}
+                    style={{ width: 300, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 5, flexDirection: 'row' }}
+                > <FontAwesome name="search" size={18} color="#ea1616" style={{ margin: 10 }} />
+                    <Text style={{ fontSize: 14, margin: 10, marginLeft: -3 }}>Xin chào, Bạn muốn tìm gì hôm nay?</Text>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('GioHang')}>
+                    <AntDesign name="shoppingcart" size={30} color="white" style={{ margin: 5 }} />
+                </Pressable>
             </View>
+            <Image source={require("../image_Ha/Nhãn Hàng/nh.jpg")} style={{ height: 200, width: '95%', resizeMode: 'contain', borderRadius: 10, marginLeft: 10 }} />
+
             <View style={{ flexDirection: 'row' }}>
-                {/* danh mục */}
-                <View style={{ flexDirection: 'column-reverse' }}>
-                    <FlatList //Combo Giam Gia
-                        data={data1}
-                        renderItem={({ item }) => {
-                            return (
-                                <View style={{ width: 75, borderRightWidth: 1, borderBottomWidth: 1, alignItems: 'center' }}>
-                                    <Image source={item.img} style={{ marginTop: 5, width: 50, height: 50, borderRadius: 100 }} />
-                                    <Text style={{ marginLeft: 3 }}>{item.name}</Text>
 
+                <Pressable style={[selection === 1 ? { color: '#E94141' } : null,]} onPress={() => { setSelection(1); setDataSanPham([...array]) }}></Pressable>
 
-                                </View>
-                            )
-                        }}
-                    ></FlatList>
+                <Pressable style={[styles.btn, selection === 2 ? { backgroundColor: 'red' } : null,]} onPress={() => { setSelection(2); setDataSanPham([...array.filter((item) => item.type_DM == 'uong')]) }}>ĐỒ UỐNG</Pressable>
 
-                </View>
-
-                {/* Sản phẩm */}
-                <View>
-                    <FlatList  //san pham
-                        numColumns={2}
-                        data={dataSanPham}
-                        renderItem={({ item }) => {
-                            return (
-                                <Pressable onPress={() => { navigation.navigate({ name: 'SanPham', params: { item } }) }}>
-                                    <View style={{ height: 240, width: 145, alignItems: 'center', margin: 5, backgroundColor: "#fff", shadowColor: 'gray', shadowRadius: 5, borderRadius: 5 }}>
-                                        <Image source={item.img} style={{ marginTop: 5, width: 100, height: 100, resizeMode: 'contain' }} />
-                                        <Text style={{ marginLeft: 3 }}>{item.name}</Text>
-                                        <Text style={{ fontWeight: 'bold', color: '#ea1717', fontSize: 16 }}> {item.price_up}</Text>
-                                        <Text style={{ fontWeight: '600', color: 'gray', fontSize: 16 }}> <s>{item.price}</s></Text>
-
-                                        <View style={{ height: 30, width: 120, borderRadius: 20, backgroundColor: '#ea1717', alignItems: 'center', justifyContent: 'center' }}>
-                                            <Text style={{ color: 'white', fontSize: 12 }}>Thêm vào giỏ</Text>
-                                        </View>
-
-                                    </View>
-                                </Pressable>
-                            )
-                        }}
-                    ></FlatList>
-                </View>
+                <Pressable style={[styles.btn, selection === 3 ? { backgroundColor: 'red' } : null,]} onPress={() => { setSelection(3); setDataSanPham([...array.filter((item) => item.type_DM === 'dung')]) }}>ĐỒ DÙNG</Pressable>
+                <Pressable style={[styles.btn, selection === 4 ? { backgroundColor: 'red' } : null,]} onPress={() => { setSelection(4); setDataSanPham([...array.filter((item) => item.type_DM == 'tuoi')]) }}>THỰC PHẨM TƯƠI SỐNG</Pressable>
+                <Pressable style={[styles.btn, selection === 5 ? { backgroundColor: 'red' } : null,]} onPress={() => { setSelection(5); setDataSanPham([...array.filter((item) => item.type_DM == 'lanh')]) }}>BẢO QUẢN LẠNH</Pressable>
+                <Pressable style={[styles.btn, selection === 6 ? { backgroundColor: 'red' } : null,]} onPress={() => { setSelection(6); setDataSanPham([...array.filter((item) => item.type_DM == 'kho')]) }}>THỰC PHẨM KHÔ</Pressable>
             </View>
-            {/* footer */}
-            <View /*End*/ style={{ width: '100%', height: 80, flexDirection: 'row' }}>
-                <View style={{ width: '20%', height: '100%', backgroundColor: 'white' }}>
-                <Pressable
-                        onPress={() => { navigation.navigate('Home') }}
-                    >
-                    <Image source={require('../image/goden.jpg')} style={{ width: '90%', height: 40, margin: 15, marginLeft: 3 }} />
-                    <Text style={{ fontSize: 13, fontWeight: '500', margin: -10, marginLeft: 4, }}>Trang chủ</Text>
-              </Pressable>
-                </View>
+            <FlatList data={dataSanPham} renderItem={({ item }) => {
+                return (
+                    <Pressable style={{ margin: 5 }} onPress={() => { navigation.navigate({ name: 'SanPham', params: { item } }) }}>
+                        <View style={{ flexDirection: 'row', backgroundColor: '#fff' }}>
+                            <Image source={item.img} style={{ width: 135, height: 127, resizeMode: 'contain' }} />
 
-                <View style={{ width: '20%', height: '100%', backgroundColor: 'white' }}>
-                    <Pressable
-                        onPress={() => { navigation.navigate('DanhMuc') }}
-                    >
-                        <Feather name="layers" size={44} color="red" style={{ margin: 12, marginLeft: 15 }} />
-                        <Text style={{ fontSize: 13, fontWeight: '500', margin: -15, marginLeft: 8, color: 'red' }}>Danh mục</Text>
+                            <Text style={{ fontSize: 20, fontWeight: 400 }}>{item.name}</Text>
+                            <View style={{ position: 'absolute' }}>
+                                <Text style={{ fontSize: 18, fontWeight: 600, color: 'red', marginLeft: 150, marginTop: 60 }}>{item.price_up}</Text>
+                                <Text style={{ fontSize: 18, fontWeight: 600, color: 'gray', marginLeft: 150, marginTop: 80 }}><s>{item.price}</s></Text>
+                                <View style ={{backgroundColor:'red'}}><Text>Thêm vào giỏ</Text></View>
+
+
+                            </View>
+                        </View>
                     </Pressable>
+                )
+            }}
 
-                </View>
-
-                <View style={{ width: '20%', height: '100%', backgroundColor: 'white' }}>
-                    <Pressable
-                        onPress={() => { navigation.navigate('ThuongHieu') }}
-                    >
-                        <Feather name="shopping-bag" size={44} color="gray" style={{ margin: 12, marginLeft: 15 }} />
-                        <Text style={{ fontSize: 13, fontWeight: '500', margin: -15, marginLeft: 1, }}>Thương hiệu</Text>
-                    </Pressable>
-
-                </View>
-
-                <View style={{ width: '20%', height: '100%', backgroundColor: 'white' }}>
-                    <Pressable
-                        onPress={() => { navigation.navigate('ThongBao') }}
-                    >
-                        <FontAwesome5 name="bell" size={45} color="gray" style={{ margin: 12, marginLeft: 15 }} />
-                        <Text style={{ fontSize: 13, fontWeight: '500', margin: -15, marginLeft: 4, }}>Thông báo</Text>
-                    </Pressable>
-
-                </View>
-
-                <View style={{ width: '20%', height: '100%', backgroundColor: 'white' }}>
-                    <Pressable
-                        onPress={() => { navigation.navigate('TaiKhoan') }}
-
-                    >
-                        <MaterialCommunityIcons name="account-outline" size={50} color="gray" style={{ margin: 12, marginLeft: 15 }} />
-                        <Text style={{ fontSize: 13, fontWeight: '500', margin: -15, marginLeft: 9, }}>Tài khoản</Text>
-                    </Pressable>
-
-                </View>
-            </View>
+            >
+            </FlatList>
         </View>
+
+
     );
 }
+
+const styles = StyleSheet.create({
+    component: {
+        flex: 1,
+    },
+    btn: {
+
+        height: 40,
+        borderRadius: 5,
+        borderColor: '#E9414187',
+        borderWidth: 1,
+        marginRight: 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#E94141',
+        color: '#fff',
+        fontSize: 13,
+        padding: 10
+    },
+
+
+})
