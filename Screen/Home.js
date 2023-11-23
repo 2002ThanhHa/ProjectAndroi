@@ -1,11 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable, Image, FlatList, } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useState } from 'react';
 import { Entypo } from '@expo/vector-icons'; 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+
 
 const arr1 = [
   {
@@ -102,7 +105,7 @@ const sanPham =[
 ]
 
 
-export default function Home() {
+export default function Home({navigation}) {
   const[data1,setData1] = useState(arr1);
   const[dataSanPham,setDataSanPham] = useState(sanPham);
   
@@ -111,7 +114,7 @@ export default function Home() {
   return (
     <View style={styles.container}>
     {/*Header*/}
-      <View /*Head*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 2800}}>       
+      <View /*Header*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 2750}}>       
         <View style={{flexDirection: 'row'}}>
             <AntDesign name="enviromento" size={24} color="white" style={{marginLeft: 20, marginTop: 10}}/>
             <Text style ={{fontSize: 20, color: 'white', fontWeight: '500', margin: 10, marginLeft: 5}}>GO! GÒ VẤP</Text>
@@ -119,7 +122,8 @@ export default function Home() {
         </View>
 
         <View style={{width: '100%', height: 50, flexDirection:'row'}}>
-            <Pressable //onPress
+            <Pressable 
+              onPress = {()=>{navigation.navigate('TimKiem1')}}
               style={{width: 320, height: 40, borderRadius: 20, backgroundColor: 'white', marginLeft: 20, flexDirection:'row'}}
             >
               <Image source={require('../image/TimKiem.png')} style={{width: 30, height: 35, margin: 5, marginLeft: 10, resizeMode:'contain'}}/>
@@ -145,7 +149,7 @@ export default function Home() {
         <View /*Cac muc lua chon*/ style={{width: '600', height: 200 ,margin: 5, flexDirection:'row'}}>
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //Logo GO
-              //onPress
+              onPress = {()=>{navigation.navigate('NhanHangGo')}}
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'#E51717', borderRadius:50}}
             >
                 <Image source={require('../image/logoGo.png')} style={{width: 55, height: 55, borderRadius:50, marginLeft: 5, margin:2}}/>
@@ -155,7 +159,7 @@ export default function Home() {
 
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo The Thanh Vien
-              //onPress
+              onPress = {()=>{navigation.navigate('TheThanhVien')}}
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoTheThanhVien.png')} style={{width: 65, height: 65, borderRadius:50, marginLeft: -6, margin:-2}}/>
@@ -165,7 +169,7 @@ export default function Home() {
           
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo Kiem Tra Gia
-              //onPress
+              onPress = {()=>{navigation.navigate('KiemTraGia')}}
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoKiemTraGia.png')} style={{width: 70, height: 70, borderRadius:50, marginLeft: -6, margin:-5}}/>
@@ -175,7 +179,7 @@ export default function Home() {
 
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo Cua hang
-              //onPress
+              onPress = {()=>{navigation.navigate('CuaHang')}}
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoCuaHang.png')} style={{width: 73, height: 73, borderRadius:50, marginLeft: -6, margin:-5}}/>
@@ -187,7 +191,7 @@ export default function Home() {
         <View /*Cac muc lua chon*/ style={{width: '600', height: 200 ,margin: -100, marginLeft: 5, flexDirection:'row'}}>
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo Flash Sale
-              //onPress
+              onPress = {()=>{navigation.navigate('FlashSale')}}
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoFlashSale.png')} style={{width: 60, height: 60, borderRadius:50, marginLeft: -6, margin:-2}}/>
@@ -197,7 +201,7 @@ export default function Home() {
 
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo Ma Giam Gia
-              //onPress
+              onPress = {()=>{navigation.navigate('MaGiamGia')}}
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoMaGiamGia.png')} style={{width: 70, height: 68, borderRadius:45, marginLeft: -6, margin:-5}}/>
@@ -207,7 +211,7 @@ export default function Home() {
           
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo Danh Muc
-              //onPress
+              onPress = {()=>{navigation.navigate('DanhMuc')}}
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoDanhMuc.png')} style={{width: 68, height: 68, borderRadius:50, marginLeft: -6, margin:-5}}/>
@@ -217,7 +221,7 @@ export default function Home() {
 
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo Thuong Hieu
-              //onPress
+              onPress = {()=>{navigation.navigate('ThuongHieu')}}
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoThuongHieu.png')} style={{width: 68, height: 68, borderRadius:45, marginLeft: -6, margin:-5}}/>
@@ -318,7 +322,7 @@ export default function Home() {
                 <View style={{width:'45%', height: 35, borderTopLeftRadius: 20, borderEndEndRadius: 20, backgroundColor: 'red'}}>
                     <Text style={{fontSize:20, fontWeight:'500', color: 'white', margin:5 ,marginLeft: 10}}>-4.7%</Text>
                 </View>
-                  <Ionicons name="heart-circle" size={28} color="red" style={{marginTop: -30, marginLeft: 100}}/>
+                  <Ionicons name="heart-circle" size={28} color="red" style={{marginTop: -30, marginLeft: 10}}/>
                   <FontAwesome5 name="gift" size={24} color="red" style={{marginTop: -3, marginLeft: 100}}/>
                   <Image source={require('../image/con_bo_cuoi.png')} style={{width: 60, height: 60, marginTop: -10, marginLeft: 40}}/>
                   <Text style={{fontSize:18, fontWeight:'500', marginLeft: 40}}>60,500đ {'\n'} <s style={{fontSize:16, fontWeight:'300',}}>63.500đ</s></Text>
@@ -334,7 +338,7 @@ export default function Home() {
               </View>
             </View>
 
-            <View style={{width: '100%', height: 350, margin: 10, marginLeft: -210}}>
+            <View style={{width: '100%', height: 350, margin: 10, marginLeft:-210}}>
               <View style={{width: 150, height: 235, backgroundColor: 'white',borderRadius:20, shadowColor: 'gray', shadowRadius: 10, }}>
               <View style={{width:'45%', height: 35, borderTopLeftRadius: 20, borderEndEndRadius: 20, backgroundColor: 'red'}}>
                   <Text style={{fontSize:20, fontWeight:'500', color: 'white', margin:5 ,marginLeft: 10}}>-4.7%</Text>
@@ -617,7 +621,7 @@ export default function Home() {
         </View>
       </View>
       
-      <View /*khuye nmai*/style={{width: '100%', height: 250,}}>
+      <View /*khuyen nmai*/style={{width: '100%', height: 250,}}>
           <Text style={{fontSize: 22, marginTop:-40, fontWeight: '500'}}>Khuyến mãi</Text>
           <Image source={require('../image/hinh4.jpg')} style={{width: '100%', height: 200, marginTop: 5}}/>
       </View>
@@ -659,23 +663,44 @@ export default function Home() {
         </View>
 
         <View style={{width: '20%', height:'100%', backgroundColor: 'white'}}>
-            <Image source={require('../image/ButtonDanhMuc.png')} style={{width: '58%', height: 44, margin: 15, marginLeft: 15}}/>
-            <Text style={{fontSize: 13, fontWeight: '500',margin: -15, marginLeft: 8,  }}>Danh mục</Text>
+          <Pressable
+              onPress={()=>{navigation.navigate('DanhMuc')}}
+            >
+              <Feather name="layers" size={44} color="gray" style={{margin: 12, marginLeft: 15}}/>
+              <Text style={{fontSize: 13, fontWeight: '500',margin: -15, marginLeft: 8,  }}>Danh mục</Text>
+            </Pressable>
+            
         </View>
 
         <View style={{width: '20%', height:'100%', backgroundColor: 'white'}}>
-            <Image source={require('../image/ButtonThuongHieu.png')} style={{width: '50%', height: 44, margin: 15, marginLeft: 15}}/>
-            <Text style={{fontSize: 13, fontWeight: '500', margin: -15, marginLeft: 1,  }}>Thương hiệu</Text>
+          <Pressable
+              onPress={()=>{navigation.navigate('ThuongHieu')}}
+            >
+             <Feather name="shopping-bag" size={44} color="gray" style={{margin: 12, marginLeft: 15}}/>
+              <Text style={{fontSize: 13, fontWeight: '500', margin: -15, marginLeft: 1,  }}>Thương hiệu</Text>
+            </Pressable>
+            
         </View>
         
         <View style={{width: '20%', height:'100%', backgroundColor: 'white'}}>
-            <Image source={require('../image/ButtonThongBao.png')} style={{width: '58%', height: 44, margin: 15, marginLeft: 15}}/>
-            <Text style={{fontSize: 13, fontWeight: '500',margin: -15, marginLeft: 4,  }}>Thông báo</Text>
+          <Pressable
+              onPress={()=>{navigation.navigate('ThongBao')}}
+            >
+               <FontAwesome5 name="bell" size={45} color="gray" style={{margin: 12, marginLeft: 15}}/>
+              <Text style={{fontSize: 13, fontWeight: '500',margin: -15, marginLeft: 4,  }}>Thông báo</Text>
+            </Pressable>
+            
         </View>
         
         <View style={{width: '20%', height:'100%', backgroundColor: 'white'}}>
-            <Image source={require('../image/ButtonTaiKhoan.png')} style={{width: '58%', height: 44, margin: 15, marginLeft: 15}}/>
+          <Pressable
+            onPress={()=>{navigation.navigate('TaiKhoan')}}
+
+          >
+            <MaterialCommunityIcons name="account-outline" size={50} color="gray" style={{margin: 12, marginLeft: 15}}/>
             <Text style={{fontSize: 13, fontWeight: '500',margin: -15, marginLeft: 9,  }}>Tài khoản</Text>
+          </Pressable>
+           
         </View>     
       </View>
 
