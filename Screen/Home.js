@@ -6,9 +6,13 @@ import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons';
+<<<<<<< HEAD
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
+=======
+import { MaterialCommunityIcons,SimpleLineIcons , Feather } from '@expo/vector-icons';
+>>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
 
 const arr1 = [
   {
@@ -114,12 +118,20 @@ export default function Home({navigation}) {
   return (
     <View style={styles.container}>
     {/*Header*/}
+<<<<<<< HEAD
       <View /*Header*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 2750}}>       
+=======
+      <View /*Head*/ style={{width: 395, height: 323, backgroundColor: '#E2CAE4', marginTop: 2800}}>       
+      <Pressable onPress={()=>{navigation.navigate("DiaChi")}}>
+>>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
         <View style={{flexDirection: 'row'}}>
+          
             <AntDesign name="enviromento" size={24} color="white" style={{marginLeft: 20, marginTop: 10}}/>
             <Text style ={{fontSize: 20, color: 'white', fontWeight: '500', margin: 10, marginLeft: 5}}>GO! GÒ VẤP</Text>
             <Image source={require('../image/Polygon.png')} style={{width: 13, height: 7, margin: 24, marginLeft: -5, resizeMode:'contain'}}/>
+            
         </View>
+        </Pressable>
 
         <View style={{width: '100%', height: 50, flexDirection:'row'}}>
             <Pressable 
@@ -149,7 +161,12 @@ export default function Home({navigation}) {
         <View /*Cac muc lua chon*/ style={{width: '600', height: 200 ,margin: 5, flexDirection:'row'}}>
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //Logo GO
+<<<<<<< HEAD
               onPress = {()=>{navigation.navigate('NhanHangGo')}}
+=======
+              //onPress 
+              onPress={()=> {navigation.navigate("NhanHangGo")}}
+>>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'#E51717', borderRadius:50}}
             >
                 <Image source={require('../image/logoGo.png')} style={{width: 55, height: 55, borderRadius:50, marginLeft: 5, margin:2}}/>
@@ -169,7 +186,12 @@ export default function Home({navigation}) {
           
           <View style={{width: 90, height: 95 ,margin: 5, backgroundColor:'white', borderRadius: 10, shadowColor: 'gray', shadowRadius: 10}}>
             <Pressable //LoGo Kiem Tra Gia
+<<<<<<< HEAD
               onPress = {()=>{navigation.navigate('KiemTraGia')}}
+=======
+              //onPress
+              onPress={()=> {navigation.navigate("KiemTraGia")}}
+>>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
               style={{width: 60, height: 60 ,margin: 10, marginLeft: 15, backgroundColor:'white', borderRadius:50}}
             >
                 <Image source={require('../image/LogoKiemTraGia.png')} style={{width: 70, height: 70, borderRadius:50, marginLeft: -6, margin:-5}}/>
@@ -656,7 +678,7 @@ export default function Home({navigation}) {
       </View>
 
     {/*footder*/}
-      <View /*End*/ style={{width: '100%', height: 80, flexDirection: 'row'}}>
+    <View /*End*/ style={{width: '100%', height: 80, flexDirection: 'row'}}>
         <View style={{width: '20%', height:'100%', backgroundColor: 'white'}}>
             <Image source={require('../image/ButtonGo.png')} style={{width: '90%', height: 40, margin: 15, marginLeft: 3}}/>
             <Text style={{fontSize: 13, fontWeight: '500', color: 'red',margin: -10, marginLeft: 4,  }}>Trang chủ</Text>
@@ -703,7 +725,6 @@ export default function Home({navigation}) {
            
         </View>     
       </View>
-
     </View>
   );
 }

@@ -9,7 +9,10 @@
     "web": "expo start --web"
   },
   "dependencies": {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
     "@expo/webpack-config": "^19.0.0",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
@@ -20,8 +23,11 @@
     "react-native": "0.72.6",
     "react-native-paper": "^5.11.1",
     "react-native-web": "~0.19.6"
+<<<<<<< HEAD
 
    
+=======
+>>>>>>> 7fec84bb78ebe794a8a979473bf859e39ec40a6e
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
